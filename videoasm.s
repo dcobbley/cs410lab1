@@ -35,6 +35,15 @@ attr:	.long	0
 cls:	pushl	%ebp
 	movl	%esp, %ebp
 	# Fill me in!
+
+	movl	$DEFAULT_ATTR, %eax
+	shl 	$8, %eax
+	orl		$SPACE, %eax
+	movl	$video, %edx
+	movl	%eax, (%edx)
+
+
+
 	movl	%ebp, %esp
 	popl	%ebp
 	ret
